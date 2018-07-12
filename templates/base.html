@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+    <meta charset="utf-8" />
+    <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="generator" content="Pelican" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/{{ CSS_FILE }}" type="text/css" media="screen" />
+    {% if FEED_RSS %}
+    <link rel="alternate" type="application/rss+xml" title="{{ SITENAME }} RSS Feed" href="{{ SITEURL }}/{{ FEED_RSS }}" />
+    {% endif %}
+    {% if FEED %}
+    <link rel="alternate" type="application/atom+xml" title="{{ SITENAME }} ATOM Feed" href="{{ SITEURL }}/{{ FEED }}" />
+    {% endif %}
+</head>
+<body>
+<div id="wrapper">
+
+    <div id="masthead" class="fix">
+        <h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+        <div id="blogLead">
+            {% if SITELOGO %}<img src="{{ SITEURL }}/{{ SITELOGO }}" alt="Icon" />{% endif %}
+            {% if SITESUBTITLE %}<p id="authorIntro">{{ SITESUBTITLE }}</p>{% endif %}
+        </div>
+    </div>
+
+    {% include 'navigation.strip.html' %}
+
+    <div id="filler" class="fix">
+        {% block content %}
+        {% endblock %}
+    </div>
+    {% include 'footer.strip.html' %}
+    <div id="footer" class="fix">
+        <p class="left">Powered by <a href="http://docs.getpelican.com" title="Grid Focus for Pelican">Pelican</a>, with the <a href="https://github.com/oulenz/pelican-grid-focus" title="Grid Focus for Pelican">Grid Focus</a> theme <a href="http://5thirtyone.com/grid-focus" title="Grid Focus for Wordpress">originally</a> by <a href="http://punsalan.me" title="Derek Punsalan">Derek Punsalan</a>.</p>
+        <p class="right">Whitespace</p>
+    </div>
+</div>
+<script src="/js/functions.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

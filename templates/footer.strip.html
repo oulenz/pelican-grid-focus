@@ -1,0 +1,29 @@
+<div class="navStripWrapper">
+	
+	<ul class="nav fix">
+		<li><a href="{{ SITEURL }}" title="Return to the the frontpage">Frontpage<br /><span>Return home</span></a></li>
+		<li><a id="triggerCatID2" href="#" title="Show categories">Browse<br /><span>By topic</span></a></li>
+		{% if FEED %}
+		<li class="last"><a href="{{ SITEURL }}/{{ FEED }}" title="Subscribe to the main feed via ATOM">Subscribe<br /><span>ATOM feed</span></a></li>
+        {% endif %}
+        {% if FEED_RSS %}
+		<li class="last"><a href="{{ SITEURL }}/{{ FEED_RSS }}" title="Subscribe to the main feed via RSS">Subscribe<br /><span>RSS feed</span></a></li>
+        {% endif %}
+		<li id="searchBar2" class="searchField">
+			<div>
+				<form method="get" id="searchForm2" action="{{ SITEURL }}">
+				<span><input type="text" value="Search the archives..." onfocus="if (this.value == 'Search the archives...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Search the archives...';}" name="s" id="s2" /></span>
+				</form>
+			</div>
+		</li>
+	</ul>
+
+	<div id="footerStrip" class="toggleCategories fix" style="display: none;">
+		<ul class="fix">
+		{% for cat in categories %}
+			<li class="cat-item cat-item-376453"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+		{% endfor %}
+		</ul>
+	</div>
+	
+</div>

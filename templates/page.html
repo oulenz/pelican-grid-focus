@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}{% endblock %}
+{% block content %}
+<div id="mainColumn" class="fix"><a name="main"></a>
+	<div id="{{ page.slug }}" class="post">
+		<h2><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h2>
+		<div class="entry">
+			{{ page.content }}
+		</div>
+	</div>
+</div>
+{% endblock content %}
